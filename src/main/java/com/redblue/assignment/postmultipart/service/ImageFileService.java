@@ -41,24 +41,33 @@ public class ImageFileService {
     storeFile(file, destinationFile);
   }
 
-  public Path load(String filename) {
-    return Paths.get(properties.getRootLocation()).resolve(filename);
-  }
-
-  public Resource get(String fileName) {
+  public String get(String fileName) {
     try {
       Path file = load(fileName);
       Resource resource = new UrlResource(file.toUri());
-      if (resource.exists() || resource.isReadable()) {
-        return resource;
-      }
-      else {
+      if (!resource.exists() || !resource.isReadable()) {
         throw new IllegalArgumentException("Could not read file: " + fileName);
       }
+
+      return generateHTMLCode(resource);
     }
     catch (MalformedURLException e) {
       throw new IllegalArgumentException("Could not read file: " + fileName, e);
     }
+  }
+
+  private String generateHTMLCode(Resource resource) {
+    String path = null;
+
+    try {
+      path = resource.getFile().getPath();
+    } catch (IOException e) {
+      throw new IllegalArgumentException(e);
+    }
+
+    return "<html><body><h1>Hello, HTML!</h1>" +
+      "<img src=\"/" + path.replace("\\", "/") + "\" alt=\"Uploaded Image\">" +
+      "</body></html>";
   }
 
   private void storeFile(MultipartFile file, Path destinationFile) {
@@ -95,6 +104,10 @@ public class ImageFileService {
     } catch (IOException e) {
       throw new IllegalArgumentException("Could Not Create Directories");
     }
+  }
+
+  private Path load(String filename) {
+    return Paths.get(properties.getRootLocation()).resolve(filename);
   }
 
 }

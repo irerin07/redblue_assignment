@@ -6,9 +6,14 @@ import com.redblue.assignment.postmultipart.service.ImageFileService;
 
 import java.io.IOException;
 
+import java.nio.file.Path;
+
+import java.nio.file.Paths;
+
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -41,13 +46,9 @@ public class FileController {
     return ResponseEntity.status(HttpStatus.CREATED).build();
   }
 
-  @GetMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<Void> read(@RequestParam(name = "fileName") String fileName) throws IOException {
-    Resource resource = service.get(fileName);
-    String absolutePath = resource.getFile().getAbsolutePath();
-    System.out.println("absolutePath = " + absolutePath);
-
-    return ResponseEntity.status(HttpStatus.CREATED).build();
+  @GetMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.TEXT_HTML_VALUE)
+  public ResponseEntity<String> read(@RequestParam(name = "fileName") String fileName) {
+    return new ResponseEntity<>(service.get(fileName), HttpStatus.OK);
   }
 
 }

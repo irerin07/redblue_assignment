@@ -26,6 +26,7 @@ public class BulkInsertItemDataBuilder {
   }
 
   public List<BulkInsertItem> build(){
+    //@formatter:off
     return IntStream.range(0, total)
       .mapToObj(val -> BulkInsertItem.builder()
         .name("Product " + val)
@@ -33,5 +34,6 @@ public class BulkInsertItemDataBuilder {
         .description("bulk test")
         .build()
       ).collect(Collectors.toList());
+    //@formatter:on
   }
 }
