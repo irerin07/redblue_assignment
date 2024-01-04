@@ -42,20 +42,20 @@ public class SMSSenderService {
     httpHeaders.setBearerAuth(token);
 
     // @formatter:off
-    SMSVo.Request build = SMSVo.Request.builder()
+    SMSVo.Request request = SMSVo.Request.builder()
       .title("안녕하세요")
       .content("안녕하세요! SMS 샘플 테스트입니다.")
       .targetPhoneNumber("+82-10-1234-1234")
       .build();
     // @formatter:on
 
-    ResponseEntity<String> exchange = restTemplate.exchange(uri, HttpMethod.POST, new HttpEntity<>(build, httpHeaders), String.class);
+    ResponseEntity<String> exchange = restTemplate.exchange(uri, HttpMethod.POST, new HttpEntity<>(request, httpHeaders), String.class);
     String body = exchange.getBody();
   }
 
   public void webClientSMSSender(String token) {
     // @formatter:off
-    SMSVo.Request build = SMSVo.Request.builder()
+    SMSVo.Request request = SMSVo.Request.builder()
       .title("안녕하세요")
       .content("안녕하세요! SMS 샘플 테스트입니다.")
       .targetPhoneNumber("+82-10-1234-1234")
@@ -66,7 +66,7 @@ public class SMSSenderService {
     Mono<String> stringMono = webClient.post()
       .header("Authorization", "Bearer " + token)
       .accept(MediaType.APPLICATION_JSON)
-      .body(BodyInserters.fromValue(build))
+      .body(BodyInserters.fromValue(request))
       .retrieve()
       .bodyToMono(String.class);
     // @formatter:on

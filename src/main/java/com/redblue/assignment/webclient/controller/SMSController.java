@@ -22,12 +22,12 @@ public class SMSController {
 
   static final String RESOURCE_URI = "/sms";
 
-  private final SMSSenderService sender;
+  private final SMSSenderService service;
 
   @GetMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Void> read() {
-    sender.webClientSMSSender("token");
-    sender.restSMSSender("token");
+    service.webClientSMSSender("token");
+    service.restSMSSender("token");
 
     return ResponseEntity.status(HttpStatus.CREATED).build();
   }

@@ -1,19 +1,5 @@
 package com.redblue.assignment.postmultipart.controller;
 
-import com.redblue.assignment.postmultipart.domain.vo.FileVo;
-
-import com.redblue.assignment.postmultipart.service.ImageFileService;
-
-import java.io.IOException;
-
-import java.nio.file.Path;
-
-import java.nio.file.Paths;
-
-import lombok.RequiredArgsConstructor;
-
-import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.redblue.assignment.postmultipart.domain.vo.FileVo;
+import com.redblue.assignment.postmultipart.service.ImageFileService;
+
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping(FileController.RESOURCE_URI)

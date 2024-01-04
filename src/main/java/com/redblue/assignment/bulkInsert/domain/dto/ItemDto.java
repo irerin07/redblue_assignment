@@ -1,12 +1,6 @@
 package com.redblue.assignment.bulkInsert.domain.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
 import java.io.Serial;
-import java.io.Serializable;
 
 public class ItemDto extends AbstractDto {
 
