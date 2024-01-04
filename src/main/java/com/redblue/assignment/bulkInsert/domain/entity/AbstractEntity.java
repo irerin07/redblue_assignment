@@ -17,11 +17,6 @@ import lombok.Getter;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
-/**
- * @author 민경수
- * @description abstract entity
- * @since 2024.01.03
- **********************************************************************************************************************/
 @Getter
 @EqualsAndHashCode(callSuper = false, of = {"seq"})
 @MappedSuperclass

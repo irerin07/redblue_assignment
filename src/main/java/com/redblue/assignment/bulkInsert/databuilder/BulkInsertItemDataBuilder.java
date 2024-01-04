@@ -7,11 +7,6 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-/**
- * @author 민경수
- * @description product data builder
- * @since 2024.01.03
- **********************************************************************************************************************/
 public class BulkInsertItemDataBuilder {
   private final Random random = new Random();
   private int total;

@@ -25,11 +25,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author 민경수
- * @description file controller
- * @since 2024.01.02
- **********************************************************************************************************************/
 @RestController
 @RequestMapping(FileController.RESOURCE_URI)
 @RequiredArgsConstructor

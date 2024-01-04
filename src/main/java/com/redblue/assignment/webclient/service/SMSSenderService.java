@@ -18,11 +18,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import reactor.core.publisher.Mono;
 
-/**
- * @author 민경수
- * @description smssender
- * @since 2024.01.03
- **********************************************************************************************************************/
+/*
+  RestTemplate와 WebClient 각각의 configuration 클래스를 생성해 사용할 수도 있지만 우선은 그냥 구현했다.
+ */
 @Service
 public class SMSSenderService {
 

@@ -5,14 +5,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.io.Serial;
 import java.io.Serializable;
 
-/**
- * @author 민경수
- * @description item
- * @since 2024.01.02
- **********************************************************************************************************************/
-public class ItemDto implements Serializable {
+public class ItemDto extends AbstractDto {
+
+  @Serial
+  private static final long serialVersionUID = -4613528480329912645L;
+
 
   private Long seq;
 

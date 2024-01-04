@@ -13,11 +13,6 @@ import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-/**
- * @author 민경수
- * @description jpa configuration
- * @since 2024.01.03
- **********************************************************************************************************************/
 @Configuration
 @EnableJpaAuditing
 @EntityScan(basePackageClasses = {Jsr310JpaConverters.class}, basePackages = {"com.redblue.assignment.bulkInsert.domain"})

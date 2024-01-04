@@ -10,11 +10,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- * @author 민경수
- * @description smsvo
- * @since 2024.01.03
- **********************************************************************************************************************/
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)

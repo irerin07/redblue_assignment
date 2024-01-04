@@ -11,11 +11,6 @@ import lombok.Setter;
 
 import org.springframework.web.multipart.MultipartFile;
 
-/**
- * @author 민경수
- * @description file vo
- * @since 2024.01.02
- **********************************************************************************************************************/
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)

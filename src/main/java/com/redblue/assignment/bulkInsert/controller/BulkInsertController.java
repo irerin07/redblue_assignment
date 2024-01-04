@@ -1,25 +1,17 @@
 package com.redblue.assignment.bulkInsert.controller;
 
-import com.redblue.assignment.bulkInsert.domain.vo.BulkInsertVo;
-
-import com.redblue.assignment.bulkInsert.service.BulkInsertService;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.redblue.assignment.bulkInsert.service.BulkInsertService;
+
 import lombok.RequiredArgsConstructor;
 
-/**
- * @author 민경수
- * @description bulk insert controller
- * @since 2024.01.02
- **********************************************************************************************************************/
 @RestController
 @RequestMapping(BulkInsertController.RESOURCE_URI)
 @RequiredArgsConstructor

@@ -15,11 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author 민경수
- * @description smscontroller
- * @since 2024.01.03
- **********************************************************************************************************************/
 @RestController
 @RequestMapping(SMSController.RESOURCE_URI)
 @RequiredArgsConstructor
